@@ -14,7 +14,11 @@ import os
 
 st.set_page_config(layout="wide")
     
-st.image(os.path.join("images", "Atomic_Wines_Logo.png"), use_column_width=False)
+script_dir = os.path.dirname(os.path.abspath(__file__))
+logo_path = os.path.join(script_dir, "images", "Atomic_Wines_Logo.png")
+
+st.image(logo_path, use_container_width=False)
+
 st.caption("Generate jittered wine datasets for the Atomic Wines case study")
 
 # Add space
@@ -40,8 +44,8 @@ if st.button("Generate Data"):
     
     
     # Get file paths relative to app folder
-    selling_path = os.path.join("data", "Wines_Selling.csv")
-    remain_path = os.path.join("data", "Wines_Remain.csv")
+    selling_path = os.path.join(script_dir, "data", "Wines_Selling.csv")
+    remain_path = os.path.join(script_dir, "data", "Wines_Remain.csv")
     
     # Read CSVs
     wines_selling = pd.read_csv(selling_path, encoding='latin-1')
