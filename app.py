@@ -16,7 +16,7 @@ from PIL import Image
 st.set_page_config(layout="wide")
     
 script_dir = os.path.dirname(os.path.abspath(__file__))
-logo_path = os.path.join(script_dir, "images", "Atomic_Wines_Logo.png")
+logo_path = os.path.join(script_dir, "images", "Atomic_Wines_Logo.PNG")
 
 #st.image(logo_path, use_container_width=False)
 try:
