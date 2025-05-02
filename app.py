@@ -10,6 +10,7 @@ import pandas as pd
 import numpy as np
 import random
 import os
+from PIL import Image
 
 
 st.set_page_config(layout="wide")
@@ -17,7 +18,12 @@ st.set_page_config(layout="wide")
 script_dir = os.path.dirname(os.path.abspath(__file__))
 logo_path = os.path.join(script_dir, "images", "Atomic_Wines_Logo.png")
 
-st.image(logo_path, use_container_width=False)
+#st.image(logo_path, use_container_width=False)
+try:
+    image = Image.open(logo_path)
+    st.image(image, use_container_width=False)
+except Exception as e:
+    st.error(f"Failed to load image: {e}")
 
 st.caption("Generate jittered wine datasets for the Atomic Wines case study")
 
